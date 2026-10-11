@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <title>پروژه مخفی صادق</title>
+    <style>
+        body { background-color: #050505; color: #00ff00; font-family: 'Courier New', monospace; margin: 0; padding: 20px; text-align: center; }
+        .hacker-box { border: 2px solid #00ff00; padding: 20px; display: inline-block; box-shadow: 0 0 15px #00ff00; }
+        img { width: 400px; border: 3px solid #333; margin: 20px; transition: 0.5s; }
+        img:hover { transform: scale(1.05); border-color: #00ff00; }
+        h1 { color: #fff; text-shadow: 2px 2px #ff0000; }
+        input { background: #111; color: #0f0; border: 1px solid #0f0; padding: 10px; width: 300px; }
+        button { background: #0f0; border: none; padding: 10px 20px; cursor: pointer; font-weight: bold; }
+    </style>
+</head>
+<body>
+    <div class="hacker-box">
+        <h1>عملیات ساختمان‌سازیِ صادق</h1>
+        <p>موقعیت: اصفهان، پارک ناژوان (منطقه حفاظت شده)</p>
+        
+        <!-- اینجا همون عکسی که دادی نمایش داده میشه -->
+        <img src="nazhwan.webp" alt="ساختمان پارک ناژوان">
+        
+        <h2 id="q">صادق، چه ساختمان دیگری می‌خواهی بسازی؟</h2>
+        
+        <input type="text" id="userInput" placeholder="نام ساختمان جدید را وارد کنید...">
+        <br><br>
+        <button onclick="hack()">تاییدِ نقشه</button>
+        
+        <div id="status" style="margin-top: 20px;"></div>
+    </div>
+
+    <script>
+        function hack() {
+            let val = document.getElementById('userInput').value;
+            let status = document.getElementById('status');
+            if(val === "") {
+                status.innerHTML = "خطا! صادق، باید یه اسم وارد کنی! 😈";
+            } else {
+                status.innerHTML = "درحالِ ارسالِ نقشه‌یِ " + val + " به سرورِ مرکزی...<br> [OK] دسترسی تایید شد!";
+            }
+        }
+    </script>
+</body>
+</html>
